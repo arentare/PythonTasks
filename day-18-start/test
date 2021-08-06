@@ -1,0 +1,28 @@
+s = "{[]}"
+result = True
+check = []
+for i in s:
+    if i in ("[", "{", "("):
+        check.append(i)
+        print(check)
+        print(check[-1])
+    if i == ")":
+        if check[-1] == "(":
+            check[:-1]
+        else:
+            result = False
+            break
+    if i == "}":
+        if check[-1] == "{":
+            check[:-1]
+        else:
+            result = False
+            break
+    if i == "]":
+        if check[-1] == "[":
+            check[:-1]
+        else:
+            result = False
+            break
+
+print(result)
